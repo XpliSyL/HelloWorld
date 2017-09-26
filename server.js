@@ -1,14 +1,12 @@
 var express = require('express'),
     app = express(),
+    config = require('cloud-env'),
     morgan  = require('morgan');
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
-var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-
-app.listen(port, ip, function(){
+app.listen(config.PORT, config.IP, function () {
   console.log('Server running on http://%s:%s', ip, port);
 });
 
