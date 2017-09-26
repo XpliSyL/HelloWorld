@@ -7,7 +7,7 @@ app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
 
 app.listen(config.PORT, config.IP, function () {
-  console.log('Server running on http://%s:%s', ip, port);
+  console.log('Server running on http://%s:%s', config.IP, config.PORT);
 });
 
 app.get('/', function (req, res) {
