@@ -11,7 +11,7 @@ app.listen(config.PORT, config.IP, function () {
 });
 
 app.get('/', function (req, res) {
-  res.send('Hello World!BITE');
+  res.send('Hello World!');
 });
 
 // error handling
